@@ -29,8 +29,11 @@ This leads to inefficiencies, increased chances of human error, and delays in ad
 
 Challenges:
 High Volume of Complaints: The influx of complaints can overwhelm staff, leading to backlogs.
+
 Manual Coding Errors: Human errors in coding can lead to incorrect device codes being applied, affecting data accuracy and regulatory reporting.
+
 Inconsistent Coding Practices: Variability in how different staff members apply codes can lead to inconsistencies and confusion.
+
 Time Consumption: The manual process is resource-intensive, diverting staff from more critical tasks.
 
 ### Goals
