@@ -18,8 +18,11 @@ Data collection via Webscraping
 
 ### Technologies
 Selenium 
+
 Flask
+
 SVM
+
 XGBoost 
 
 
