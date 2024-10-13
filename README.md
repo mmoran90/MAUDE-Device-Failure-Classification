@@ -28,9 +28,8 @@ The process of applying reported device codes to medical device complaints recei
 This leads to inefficiencies, increased chances of human error, and delays in addressing complaints, which can ultimately impact patient safety and regulatory compliance.
 
 Challenges:
-High Volume of Complaints: 
 
-The influx of complaints can overwhelm staff, leading to backlogs.
+High Volume of Complaints: The influx of complaints can overwhelm staff, leading to backlogs.
 
 Manual Coding Errors: Human errors in coding can lead to incorrect device codes being applied, affecting data accuracy and regulatory reporting.
 
