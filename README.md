@@ -1,9 +1,7 @@
 # MAUDE-Device-Failure-Classification
 
 ### Installation
-To use this project, first clone the repo on your device using the commands below:
-
-'git init'
+To use this project, navigate to where you would like the repo cloned. Then clone the repo on your device using the commands below:
 
 'git clone https://github.com/mmoran90/ADS-509-Text-Mining.git'
 </br>
