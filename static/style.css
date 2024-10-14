@@ -1,0 +1,61 @@
+html, body {
+    height: 100%; /* Ensure the body takes full height */
+    margin: 0; /* Remove default margin */
+}
+
+.tabcontent {
+    display: flex; /* Use Flexbox for tab content */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+    height: 100vh; /* Full viewport height */
+}
+
+.center-container {
+    display: flex; /* Use Flexbox to center inner contents */
+    flex-direction: column; /* Stack label and search vertically */
+    align-items: center; /* Center horizontally */
+}
+
+.search {
+    --padding: 14px;
+    margin: 0; /* Reset margin to center properly */
+    width: max-content; /* Keep width as defined */
+    display: flex;
+    align-items: top; /* Align icon and textarea */
+    padding: var(--padding);
+    border-radius: 28px;
+    background: #f6f6f6;
+    transition: background 0.25s;
+}
+
+.search:focus-within {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
+}
+
+.search_input {
+    height: 10rem; /* Height of the textarea */
+    width: 40rem; /* Width of the textarea */
+    font-size: 16pt; /* Font size for the textarea */
+    font-family: 'Lexend', sans-serif; /* Font family */
+    color: #333333; /* Text color */
+    margin-left: var(--padding); /* Space between icon and textarea */
+    outline: none; /* Remove outline */
+    border: 1px solid transparent; /* Optional: add border for visibility */
+    background-color: transparent; /* Use this for input elements */
+}
+
+.event_desc::placeholder,
+.event_icon {
+    color: rgba(0, 0, 0, 0.25); /* Placeholder and icon color */
+}
+
+.prediction::placeholder {
+    color: rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: Arial, sans-serif; /* Default font */
+    background-color: white; /* Background color */
+    color: rgb(0, 0, 0); /* Text color */
+}

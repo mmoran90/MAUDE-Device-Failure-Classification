@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADS 509 Final Project</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=event"
+    />
+    <script>
+      function openTab(event, tabName) {
+        // Hide all tabs
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+
+        // Remove "active" class from all tab links
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab and add an "active" class to the link that opened it
+        document.getElementById(tabName).style.display = "block";
+        event.currentTarget.className += " active";
+      }
+
+      // JavaScript function to submit input and display prediction
+      function submitText() {
+        // Get the input text from the text bar
+        var textBarValue = document.getElementById("text_bar").value;
+
+        // Send the input text to the Flask app
+        fetch("/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: "text_bar=" + encodeURIComponent(textBarValue),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            // Display the prediction in the disabled text area
+            document.getElementById("disabled_box").value = data.prediction;
+          })
+          .catch((error) => console.error("Error:", error));
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="tab">
+        <button
+          class="tablink"
+          onclick="openTab(event, 'Home')"
+          id="defaultOpen"
+        >
+          Home
+        </button>
+        <button class="tablink" onclick="openTab(event, 'Model')">Model</button>
+      </div>
+
+      <!-- Tab content for Home (index.html) -->
+      <div id="Home" class="tabcontent">
+        <h1>MAUDE Media Device Failure Classification</h1>
+
+        <!-- Text box and button container -->
+        <label for="event_desc">Enter Event Description:</label>
+        <div class="search">
+          <span class="event_icon material-symbols-outlined"> event </span>
+          <textarea
+            cols="40"
+            rows="5"
+            class="search_input"
+            type="text"
+            id="event_desc"
+            name="event_desc"
+            placeholder="Event Description"
+          ></textarea>
+        </div>
+        <button>Classify</button>
+        <br /><br />
+        <br /><br />
+
+        <!-- Disabled text box -->
+        <label for="disabled_box"
+          >Predicted Media Device Failure Classification:</label
+        ><br />
+        <div class="search">
+          <textarea
+            class="search_input prediction"
+            id="disabled_box"
+            name="disabled_box"
+            rows="4"
+            cols="50"
+            placeholder="Predicted Device Failure"
+            disabled
+          ></textarea>
+        </div>
+      </div>
+
+      <!-- Tab content for Model (model.html) -->
+      <div id="Model" class="tabcontent" style="display: none">
+        <h1>Optimal Model Performance</h1>
+        <p>Below are the details from the optimal model</p>
+      </div>
+    </div>
+
+    <script>
+      // Open the default tab
+      document.getElementById("defaultOpen").click();
+    </script>
+  </body>
+</html>
