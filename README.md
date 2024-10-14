@@ -19,11 +19,15 @@ Data collection via Webscraping
 ### Technologies
 Selenium 
 
-Flask
-
 SVM
 
 XGBoost 
+
+Flask
+
+HTML
+
+CSS
 
 
 ### Problem Statement
