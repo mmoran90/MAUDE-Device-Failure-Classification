@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ADS 509 Final Project</title>
+    <title>MAUDE Media Device Failure Classification</title>
     <link
       rel="stylesheet"
       type="text/css"
@@ -15,40 +15,46 @@
     />
     <script>
       function openTab(event, tabName) {
-        // Hide all tabs
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
         for (i = 0; i < tabcontent.length; i++) {
           tabcontent[i].style.display = "none";
         }
 
-        // Remove "active" class from all tab links
         tablinks = document.getElementsByClassName("tablink");
         for (i = 0; i < tablinks.length; i++) {
           tablinks[i].className = tablinks[i].className.replace(" active", "");
         }
 
-        // Show the current tab and add an "active" class to the link that opened it
         document.getElementById(tabName).style.display = "block";
         event.currentTarget.className += " active";
       }
 
-      // JavaScript function to submit input and display prediction
       function submitText() {
-        // Get the input text from the text bar
-        var textBarValue = document.getElementById("text_bar").value;
+        var brandName = document.getElementById("brand_name").value;
+        var patientProblem = document.getElementById("patient_problem").value;
+        var manufacturerNarrative = document.getElementById(
+          "manufacturer_narrative"
+        ).value;
+        var eventDesc = document.getElementById("event_desc").value;
 
-        // Send the input text to the Flask app
         fetch("/", {
           method: "POST",
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
           },
-          body: "text_bar=" + encodeURIComponent(textBarValue),
+          body:
+            "brand_name=" +
+            encodeURIComponent(brandName) +
+            "&patient_problem=" +
+            encodeURIComponent(patientProblem) +
+            "&manufacturer_narrative=" +
+            encodeURIComponent(manufacturerNarrative) +
+            "&event_desc=" +
+            encodeURIComponent(eventDesc),
         })
           .then((response) => response.json())
           .then((data) => {
-            // Display the prediction in the disabled text area
             document.getElementById("disabled_box").value = data.prediction;
           })
           .catch((error) => console.error("Error:", error));
@@ -68,46 +74,82 @@
         <button class="tablink" onclick="openTab(event, 'Model')">Model</button>
       </div>
 
-      <!-- Tab content for Home (index.html) -->
       <div id="Home" class="tabcontent">
-        <h1>MAUDE Media Device Failure Classification</h1>
+        <h1 class="title">MAUDE Media Device Failure Classification</h1>
 
-        <!-- Text box and button container -->
-        <label for="event_desc">Enter Event Description:</label>
-        <div class="search">
-          <span class="event_icon material-symbols-outlined"> event </span>
-          <textarea
-            cols="40"
-            rows="5"
-            class="search_input"
-            type="text"
-            id="event_desc"
-            name="event_desc"
-            placeholder="Event Description"
-          ></textarea>
-        </div>
-        <button>Classify</button>
-        <br /><br />
+        <form action="javascript:void(0);" class="form-center">
+          <label for="brand_name">Brand Name:</label>
+          <div class="search">
+            <input
+              type="text"
+              id="brand_name"
+              name="brand_name"
+              class="search_input"
+              placeholder="Enter Brand Name"
+            />
+          </div>
+          <br />
+
+          <label for="patient_problem">Patient Problem:</label>
+          <div class="search">
+            <input
+              type="text"
+              id="patient_problem"
+              name="patient_problem"
+              class="search_input"
+              placeholder="Enter Patient Problem"
+            />
+          </div>
+          <br />
+
+          <label for="manufacturer_narrative">Manufacturer Narrative:</label>
+          <div class="search">
+            <textarea
+              type="text"
+              id="manufacturer_narrative"
+              name="manufacturer_narrative"
+              class="text_input"
+              placeholder="Enter Manufacturer Narrative"
+            ></textarea>
+          </div>
+          <br />
+
+          <label for="event_desc">Event Description:</label>
+          <div class="search">
+            <textarea
+              cols="40"
+              rows="5"
+              class="text_input"
+              id="event_desc"
+              name="event_desc"
+              placeholder="Event Description"
+            ></textarea>
+          </div>
+          <br />
+
+          <button class="button" onclick="submitText()">Classify</button>
+        </form>
         <br /><br />
 
-        <!-- Disabled text box -->
-        <label for="disabled_box"
-          >Predicted Media Device Failure Classification:</label
-        ><br />
-        <div class="search">
-          <textarea
-            class="search_input prediction"
-            id="disabled_box"
-            name="disabled_box"
-            rows="4"
-            cols="50"
-            placeholder="Predicted Device Failure"
-            disabled
-          ></textarea>
+        <div class="results">
+          <label for="disabled_box"
+            >Predicted Media Device Failure Classification:</label
+          >
+          <br />
+          <div class="search prediction">
+            <textarea
+              class="text_input pred_text"
+              id="disabled_box"
+              name="disabled_box"
+              rows="4"
+              cols="50"
+              placeholder="Predicted Device Failure"
+              disabled
+            ></textarea>
+          </div>
         </div>
       </div>
 
-      <!-- Tab content for Model (model.html) -->
       <div id="Model" class="tabcontent" style="display: none">
         <h1>Optimal Model Performance</h1>
         <p>Below are the details from the optimal model</p>
@@ -115,7 +157,6 @@
     </div>
 
     <script>
-      // Open the default tab
       document.getElementById("defaultOpen").click();
     </script>
   </body>

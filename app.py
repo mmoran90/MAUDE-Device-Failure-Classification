@@ -1,7 +1,7 @@
-from flask import Flask, render_template, request, jsonify, url_for
-#from sklearn.feature_extraction.text import CountVectorizer
 import pickle
 import numpy as np
+import xgboost as xgb
+from flask import Flask, render_template, request, jsonify, url_for
 import os
 
 app = Flask(__name__)
@@ -15,7 +15,16 @@ with open("optimal_model.pkl", "rb") as plkFile:
 with open("tfidf_vectorizer.pkl", "rb") as tfidf_file:
     vectorizer = pickle.load(tfidf_file)
 
-# Enable css modifications    
+# Create a mapping for numeric predictions to text labels
+prediction_labels = {
+    0: "No failure",
+    1: "Minor failure",
+    2: "Major failure",
+    3: "Critical failure"
+    # Adjust or expand based on your classification categories
+}
+
+# Enable CSS modifications
 @app.context_processor
 def override_url_for():
     return dict(url_for=dated_url_for)
@@ -29,21 +38,34 @@ def dated_url_for(endpoint, **values):
             values['q'] = int(os.stat(file_path).st_mtime)
     return url_for(endpoint, **values)
 
-# Setup flask connection and methods
+# Setup Flask connection and methods
 @app.route("/", methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
-        # Get info from user
-        user_input = request.form['text_bar']
+        # Get input from the form fields
+        brand_name = request.form['brand_name']
+        patient_problem = request.form['patient_problem']
+        manufacturer_narrative = request.form['manufacturer_narrative']
+        event_desc = request.form['event_desc']
+
+        # Combine the input fields into a single text string
+        user_input = f"{brand_name} {patient_problem} {manufacturer_narrative} {event_desc}"
+
+        # Vectorize the input
         data = vectorizer.transform([user_input])
 
-        # Predict using provided info
-        prediction = model.predict(data)
-        return jsonify({'prediction': prediction.tolist()})
-    
-    # Use index.html to show flask page on local host
-    return render_template('index.html')  
+        # Convert the vectorized data to DMatrix for XGBoost
+        dmatrix_data = xgb.DMatrix(data)
 
-# Run the flask app
+        # Predict using the loaded model
+        prediction = model.predict(dmatrix_data)
+
+        # Return the prediction as a JSON response
+        return jsonify({'prediction': prediction.tolist()})
+
+    # Render the form on GET request
+    return render_template('index.html')
+
+# Run the Flask app
 if __name__ == "__main__":
     app.run(debug=True)

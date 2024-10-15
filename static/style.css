@@ -1,14 +1,55 @@
 html, body {
-    height: 100%; /* Ensure the body takes full height */
+    height: 100vh;
     margin: 0; /* Remove default margin */
 }
 
+body {
+    font-family: Arial, sans-serif; /* Default font */
+    background: linear-gradient(#f6f6f6, #f6f6f6);
+    background-color: white; /* Background color */
+    color: rgb(0, 0, 0); /* Text color */
+}
+
+.title{
+    margin-left: 25%;
+    margin-top: 8%;
+    margin-bottom: 5%;
+}
+
 .tabcontent {
-    display: flex; /* Use Flexbox for tab content */
-    flex-direction: column; /* Stack children vertically */
-    align-items: center; /* Center children horizontally */
-    justify-content: center; /* Center children vertically */
-    height: 100vh; /* Full viewport height */
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+    justify-content: center;  /* Centers the form horizontally */
+    align-items: center;      /* Optional: Centers vertically as well */
+    background-color: #f6f6f6;
+}
+
+.form-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    background-color: red; /* For demo purposes */
+    width: 50%;            /* Form takes up 50% of the width */
+    padding: 20px;         /* Optional: Adds some padding */
+    margin-left: 25%;
+    background-color: rgba(0, 30, 255, 0.548);
+    font-size: 20px;
+    border-radius: 15px;
+}
+
+.results{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    background-color: rgba(192, 192, 192, 0.824);
+    width: 50%;
+    margin-left: 25%;
+    padding: 20px;
+    border-radius: 15px;
 }
 
 .center-container {
@@ -34,9 +75,9 @@ html, body {
 }
 
 .search_input {
-    height: 10rem; /* Height of the textarea */
-    width: 40rem; /* Width of the textarea */
-    font-size: 16pt; /* Font size for the textarea */
+    height: 25px; /* Height of the textarea */
+    width: 400px; /* Width of the textarea */
+    font-size: 12pt; /* Font size for the textarea */
     font-family: 'Lexend', sans-serif; /* Font family */
     color: #333333; /* Text color */
     margin-left: var(--padding); /* Space between icon and textarea */
@@ -45,17 +86,41 @@ html, body {
     background-color: transparent; /* Use this for input elements */
 }
 
+.text_input{
+    height: 100px; /* Height of the textarea */
+    width: 400px; /* Width of the textarea */
+    font-size: 12pt; /* Font size for the textarea */
+    font-family: 'Lexend', sans-serif; /* Font family */
+    color: #333333; /* Text color */
+    margin-left: var(--padding); /* Space between icon and textarea */
+    outline: none; /* Remove outline */
+    border: 1px solid transparent; /* Optional: add border for visibility */
+    background-color: transparent; /* Use this for input elements */
+}
+
+.text_input::placeholder, 
+.search_input::placeholder{
+    color: rgba(0, 0, 0, 0.25);
+}
+
 .event_desc::placeholder,
 .event_icon {
     color: rgba(0, 0, 0, 0.25); /* Placeholder and icon color */
 }
 
-.prediction::placeholder {
+.pred_text::placeholder {
     color: rgba(0, 0, 0, 0.15);
 }
 
-body {
-    font-family: Arial, sans-serif; /* Default font */
-    background-color: white; /* Background color */
-    color: rgb(0, 0, 0); /* Text color */
+.button{
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    width: 200px;
+    height: 35px;
+    transition-duration: 0.5s;
 }
+
+.button:hover {
+    background-color: #d8d6d6;
+  }
