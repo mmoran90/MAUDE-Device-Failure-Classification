@@ -1,4 +1,4 @@
-# MAUDE-Device-Failure-Classification
+# MAUDE Device Failure Classification
 
 ### Installation
 To use this project, navigate to where you would like the repo cloned on your machine. Then clone the repo on your device using the commands below:
