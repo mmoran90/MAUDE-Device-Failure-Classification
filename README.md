@@ -9,7 +9,7 @@ To use this project, navigate to where you would like the repo cloned on your ma
 
 ### Running the Flask Application
 After the repo has been cloned, perform the following steps
-   - Open a command prompt (windows) or terminal (Linux/MacOS)
+   - Open a command prompt (windows) or terminal (Linux/MacOS) and navigate to where the repo was cloned
    - Ensure python3 is installed on your machine (python --version)
      - If python3 is not installed, please do so now  
    - Execute `python app.exe` from command prompt/terminal
