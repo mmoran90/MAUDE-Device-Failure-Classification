@@ -10,9 +10,22 @@ body {
     color: rgb(0, 0, 0); /* Text color */
 }
 
+h1{
+    text-decoration: underline;
+}
+
+p {
+    color: blue;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
 .title{
     margin-left: 25%;
-    margin-top: 8%;
+    margin-top: 5%;
     margin-bottom: 5%;
 }
 
@@ -95,7 +108,7 @@ body {
     margin-left: var(--padding); /* Space between icon and textarea */
     outline: none; /* Remove outline */
     border: 1px solid transparent; /* Optional: add border for visibility */
-    background-color: transparent; /* Use this for input elements */
+    background-color: transparent;
 }
 
 .text_input::placeholder, 
@@ -123,4 +136,31 @@ body {
 
 .button:hover {
     background-color: #d8d6d6;
+  }
+
+  .tablink {
+    background-color: rgba(192, 192, 192, 0.824);
+    border-radius: 15px;
+    border: none;
+    width: fit-content;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-left: 1%;
+    margin-top: 1%;
+    transition-duration: 1s;
+  }
+
+  .tablink:hover{
+    background-color: #a9a9a9;
+  }
+
+  .model_perf {
+    margin-left: 32%;
+    margin-top: 5%;
+  }
+
+  .text_color{
+    color: blue;
   }

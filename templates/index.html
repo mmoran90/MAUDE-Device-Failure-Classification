@@ -65,7 +65,7 @@
     <div class="container">
       <div class="tab">
         <button
-          class="tablink"
+          class="tablink tab_button"
           onclick="openTab(event, 'Home')"
           id="defaultOpen"
         >
@@ -75,7 +75,7 @@
       </div>
 
       <div id="Home" class="tabcontent">
-        <h1 class="title">MAUDE Media Device Failure Classification</h1>
+        <h1 class="title">MAUDE Medical Device Failure Classification</h1>
 
         <form action="javascript:void(0);" class="form-center">
           <label for="brand_name">Brand Name:</label>
@@ -133,7 +133,7 @@
 
         <div class="results">
           <label for="disabled_box"
-            >Predicted Media Device Failure Classification:</label
+            >Predicted Medical Device Failure Classification:</label
           >
           <br />
           <div class="search prediction">
@@ -150,9 +150,194 @@
         </div>
       </div>
 
-      <div id="Model" class="tabcontent" style="display: none">
+      <div id="Model" class="tabcontent model_perf" style="display: none">
         <h1>Optimal Model Performance</h1>
-        <p>Below are the details from the optimal model</p>
+        <p>Overall Accuracy: 86.547%</p>
+        <h2>Classification Report</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Precision</th>
+              <th>Recall</th>
+              <th>F1-Score</th>
+              <th>Support</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Label 0</td>
+              <td>0.80</td>
+              <td>0.89</td>
+              <td>0.84</td>
+              <td>9</td>
+            </tr>
+            <tr>
+              <td>Label 1</td>
+              <td>0.92</td>
+              <td>1.00</td>
+              <td>0.96</td>
+              <td>22</td>
+            </tr>
+            <tr>
+              <td>Label 2</td>
+              <td>0.79</td>
+              <td>0.94</td>
+              <td>0.86</td>
+              <td>16</td>
+            </tr>
+            <tr>
+              <td>Label 3</td>
+              <td>0.00</td>
+              <td>0.00</td>
+              <td>0.00</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Label 4</td>
+              <td>0.00</td>
+              <td>0.00</td>
+              <td>0.00</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Label 5</td>
+              <td>0.00</td>
+              <td>0.00</td>
+              <td>0.00</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Label 6</td>
+              <td>0.00</td>
+              <td>0.00</td>
+              <td>0.00</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Label 7</td>
+              <td>0.00</td>
+              <td>0.00</td>
+              <td>0.00</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Label 8</td>
+              <td>1.00</td>
+              <td>1.00</td>
+              <td>1.00</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td>Label 9</td>
+              <td>0.67</td>
+              <td>1.00</td>
+              <td>0.80</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Label 10</td>
+              <td>1.00</td>
+              <td>1.00</td>
+              <td>1.00</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>Label 11</td>
+              <td>1.00</td>
+              <td>1.00</td>
+              <td>1.00</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>Label 12</td>
+              <td>1.00</td>
+              <td>0.86</td>
+              <td>0.92</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td>Label 13</td>
+              <td>0.96</td>
+              <td>0.76</td>
+              <td>0.85</td>
+              <td>29</td>
+            </tr>
+            <tr>
+              <td>Label 14</td>
+              <td>1.00</td>
+              <td>1.00</td>
+              <td>1.00</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>Label 15</td>
+              <td>0.90</td>
+              <td>0.82</td>
+              <td>0.86</td>
+              <td>11</td>
+            </tr>
+            <tr>
+              <td>Label 16</td>
+              <td>0.76</td>
+              <td>1.00</td>
+              <td>0.87</td>
+              <td>29</td>
+            </tr>
+            <tr>
+              <td>Label 17</td>
+              <td>1.00</td>
+              <td>1.00</td>
+              <td>1.00</td>
+              <td>11</td>
+            </tr>
+            <tr>
+              <td>Label 18</td>
+              <td>0.90</td>
+              <td>1.00</td>
+              <td>0.95</td>
+              <td>19</td>
+            </tr>
+            <tr>
+              <td>Label 19</td>
+              <td>1.00</td>
+              <td>1.00</td>
+              <td>1.00</td>
+              <td>183</td>
+            </tr>
+            <tr>
+              <td>Label 20</td>
+              <td>1.00</td>
+              <td>0.67</td>
+              <td>0.80</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td>...</td>
+            </tr>
+            <tr>
+              <td class="text_color"><strong>Macro avg</strong></td>
+              <td class="text_color"><strong>0.71</strong></td>
+              <td class="text_color"><strong>0.73</strong></td>
+              <td class="text_color"><strong>0.71</strong></td>
+              <td class="text_color"><strong>610</strong></td>
+            </tr>
+            <tr>
+              <td class="text_color"><strong>Weighted avg</strong></td>
+              <td class="text_color"><strong>0.94</strong></td>
+              <td class="text_color"><strong>0.95</strong></td>
+              <td class="text_color"><strong>0.94</strong></td>
+              <td class="text_color"><strong>610</strong></td>
+            </tr>
+            <tr>
+              <td class="text_color"><strong>Samples avg</strong></td>
+              <td class="text_color"><strong>0.95</strong></td>
+              <td class="text_color"><strong>0.97</strong></td>
+              <td class="text_color"><strong>0.95</strong></td>
+              <td class="text_color"><strong>610</strong></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
