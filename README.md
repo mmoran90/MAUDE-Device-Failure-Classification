@@ -7,6 +7,22 @@ To use this project, navigate to where you would like the repo cloned on your ma
 </br>
 </br>
 
+### Running the Flask Application
+After the repo has been cloned, perform the following steps
+   - Open a command prompt (windows) or terminal (Linux/MacOS)
+   - Ensure python3 is installed on your machine (python --version)
+     - If python3 is not installed, please do so now  
+   - Execute `python app.exe` from command prompt/terminal
+     - `app.exe` utiliztes localhost (127.0.0.1 in IPv4)
+   - Open a browser and navigate to localhost or `ctrl + click` the link in the command prompt or terminal window
+
+</br>
+Now enter any or all fields in the webpage, where the application can predict the most likely medical device failure.
+</br>
+Additionally, the results of our optimal model can be seen in the models tab at the top of the webpage 
+</br>
+</br>
+
 
 ### Contributor(s)
 * [Marvin Moran](https://github.com/mmoran90)
@@ -50,6 +66,23 @@ Develop an automated solution that streamlines the coding process for medical de
 </br>
 </br>
 
+### Troubleshooting Flask
+You might encounter issues where your interpreter cannot find libraries that are already installed on your machine. If that happens, create a local virtual environment. Below are steps to do so.
+</br>
+  - Windows
+    - Create a new virtual environment
+      - `python -m venv myenv`
+    - Activate the virtual environment
+      - `myenv\Scripts\activate`
+  - MacOS/Linux
+    - Create a new virtual environment
+      - `python -m venv myenv`
+    - Activate the virtual environment
+      - `source myenv/bin/activate`
+      
+Now use `pip install <library>` for any missing libraries in your virtual environment
+</br>
+</br>
 
 ### Data Sources
 The FDA's MAUDE (Manufacturer and User Facility Device Experience) Database 
