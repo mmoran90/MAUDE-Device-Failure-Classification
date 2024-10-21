@@ -9,10 +9,6 @@
       type="text/css"
       href="{{ url_for('static', filename='style.css') }}"
     />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=event"
-    />
     <script>
       function openTab(event, tabName) {
         var i, tabcontent, tablinks;
@@ -150,194 +146,196 @@
         </div>
       </div>
 
-      <div id="Model" class="tabcontent model_perf" style="display: none">
-        <h1>Optimal Model Performance</h1>
-        <p>Overall Accuracy: 86.547%</p>
-        <h2>Classification Report</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Label</th>
-              <th>Precision</th>
-              <th>Recall</th>
-              <th>F1-Score</th>
-              <th>Support</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Label 0</td>
-              <td>0.80</td>
-              <td>0.89</td>
-              <td>0.84</td>
-              <td>9</td>
-            </tr>
-            <tr>
-              <td>Label 1</td>
-              <td>0.92</td>
-              <td>1.00</td>
-              <td>0.96</td>
-              <td>22</td>
-            </tr>
-            <tr>
-              <td>Label 2</td>
-              <td>0.79</td>
-              <td>0.94</td>
-              <td>0.86</td>
-              <td>16</td>
-            </tr>
-            <tr>
-              <td>Label 3</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>Label 4</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>Label 5</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <td>Label 6</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>Label 7</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>0.00</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <td>Label 8</td>
-              <td>1.00</td>
-              <td>1.00</td>
-              <td>1.00</td>
-              <td>7</td>
-            </tr>
-            <tr>
-              <td>Label 9</td>
-              <td>0.67</td>
-              <td>1.00</td>
-              <td>0.80</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>Label 10</td>
-              <td>1.00</td>
-              <td>1.00</td>
-              <td>1.00</td>
-              <td>4</td>
-            </tr>
-            <tr>
-              <td>Label 11</td>
-              <td>1.00</td>
-              <td>1.00</td>
-              <td>1.00</td>
-              <td>4</td>
-            </tr>
-            <tr>
-              <td>Label 12</td>
-              <td>1.00</td>
-              <td>0.86</td>
-              <td>0.92</td>
-              <td>7</td>
-            </tr>
-            <tr>
-              <td>Label 13</td>
-              <td>0.96</td>
-              <td>0.76</td>
-              <td>0.85</td>
-              <td>29</td>
-            </tr>
-            <tr>
-              <td>Label 14</td>
-              <td>1.00</td>
-              <td>1.00</td>
-              <td>1.00</td>
-              <td>4</td>
-            </tr>
-            <tr>
-              <td>Label 15</td>
-              <td>0.90</td>
-              <td>0.82</td>
-              <td>0.86</td>
-              <td>11</td>
-            </tr>
-            <tr>
-              <td>Label 16</td>
-              <td>0.76</td>
-              <td>1.00</td>
-              <td>0.87</td>
-              <td>29</td>
-            </tr>
-            <tr>
-              <td>Label 17</td>
-              <td>1.00</td>
-              <td>1.00</td>
-              <td>1.00</td>
-              <td>11</td>
-            </tr>
-            <tr>
-              <td>Label 18</td>
-              <td>0.90</td>
-              <td>1.00</td>
-              <td>0.95</td>
-              <td>19</td>
-            </tr>
-            <tr>
-              <td>Label 19</td>
-              <td>1.00</td>
-              <td>1.00</td>
-              <td>1.00</td>
-              <td>183</td>
-            </tr>
-            <tr>
-              <td>Label 20</td>
-              <td>1.00</td>
-              <td>0.67</td>
-              <td>0.80</td>
-              <td>6</td>
-            </tr>
-            <tr>
-              <td>...</td>
-            </tr>
-            <tr>
-              <td class="text_color"><strong>Macro avg</strong></td>
-              <td class="text_color"><strong>0.71</strong></td>
-              <td class="text_color"><strong>0.73</strong></td>
-              <td class="text_color"><strong>0.71</strong></td>
-              <td class="text_color"><strong>610</strong></td>
-            </tr>
-            <tr>
-              <td class="text_color"><strong>Weighted avg</strong></td>
-              <td class="text_color"><strong>0.94</strong></td>
-              <td class="text_color"><strong>0.95</strong></td>
-              <td class="text_color"><strong>0.94</strong></td>
-              <td class="text_color"><strong>610</strong></td>
-            </tr>
-            <tr>
-              <td class="text_color"><strong>Samples avg</strong></td>
-              <td class="text_color"><strong>0.95</strong></td>
-              <td class="text_color"><strong>0.97</strong></td>
-              <td class="text_color"><strong>0.95</strong></td>
-              <td class="text_color"><strong>610</strong></td>
-            </tr>
-          </tbody>
-        </table>
+      <div id="Model" class="tabcontent" style="display: none">
+        <h1 class="model_title">XGBoost with Weights Performance</h1>
+        <div class="model_perf">
+          <h2>Classification Report</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Label</th>
+                <th>Precision</th>
+                <th>Recall</th>
+                <th>F1-Score</th>
+                <th>Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Label 0</td>
+                <td>0.80</td>
+                <td>0.89</td>
+                <td>0.84</td>
+                <td>9</td>
+              </tr>
+              <tr>
+                <td>Label 1</td>
+                <td>0.92</td>
+                <td>1.00</td>
+                <td>0.96</td>
+                <td>22</td>
+              </tr>
+              <tr>
+                <td>Label 2</td>
+                <td>0.79</td>
+                <td>0.94</td>
+                <td>0.86</td>
+                <td>16</td>
+              </tr>
+              <tr>
+                <td>Label 3</td>
+                <td>0.00</td>
+                <td>0.00</td>
+                <td>0.00</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>Label 4</td>
+                <td>0.00</td>
+                <td>0.00</td>
+                <td>0.00</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>Label 5</td>
+                <td>0.00</td>
+                <td>0.00</td>
+                <td>0.00</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>Label 6</td>
+                <td>0.00</td>
+                <td>0.00</td>
+                <td>0.00</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>Label 7</td>
+                <td>0.00</td>
+                <td>0.00</td>
+                <td>0.00</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>Label 8</td>
+                <td>1.00</td>
+                <td>1.00</td>
+                <td>1.00</td>
+                <td>7</td>
+              </tr>
+              <tr>
+                <td>Label 9</td>
+                <td>0.67</td>
+                <td>1.00</td>
+                <td>0.80</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>Label 10</td>
+                <td>1.00</td>
+                <td>1.00</td>
+                <td>1.00</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>Label 11</td>
+                <td>1.00</td>
+                <td>1.00</td>
+                <td>1.00</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>Label 12</td>
+                <td>1.00</td>
+                <td>0.86</td>
+                <td>0.92</td>
+                <td>7</td>
+              </tr>
+              <tr>
+                <td>Label 13</td>
+                <td>0.96</td>
+                <td>0.76</td>
+                <td>0.85</td>
+                <td>29</td>
+              </tr>
+              <tr>
+                <td>Label 14</td>
+                <td>1.00</td>
+                <td>1.00</td>
+                <td>1.00</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>Label 15</td>
+                <td>0.90</td>
+                <td>0.82</td>
+                <td>0.86</td>
+                <td>11</td>
+              </tr>
+              <tr>
+                <td>Label 16</td>
+                <td>0.76</td>
+                <td>1.00</td>
+                <td>0.87</td>
+                <td>29</td>
+              </tr>
+              <tr>
+                <td>Label 17</td>
+                <td>1.00</td>
+                <td>1.00</td>
+                <td>1.00</td>
+                <td>11</td>
+              </tr>
+              <tr>
+                <td>Label 18</td>
+                <td>0.90</td>
+                <td>1.00</td>
+                <td>0.95</td>
+                <td>19</td>
+              </tr>
+              <tr>
+                <td>Label 19</td>
+                <td>1.00</td>
+                <td>1.00</td>
+                <td>1.00</td>
+                <td>183</td>
+              </tr>
+              <tr>
+                <td>Label 20</td>
+                <td>1.00</td>
+                <td>0.67</td>
+                <td>0.80</td>
+                <td>6</td>
+              </tr>
+              <tr>
+                <td>...</td>
+              </tr>
+              <tr>
+                <td class="text_color"><strong>Macro avg</strong></td>
+                <td class="text_color"><strong>0.71</strong></td>
+                <td class="text_color"><strong>0.73</strong></td>
+                <td class="text_color"><strong>0.71</strong></td>
+                <td class="text_color"><strong>610</strong></td>
+              </tr>
+              <tr>
+                <td class="text_color"><strong>Weighted avg</strong></td>
+                <td class="text_color"><strong>0.94</strong></td>
+                <td class="text_color"><strong>0.95</strong></td>
+                <td class="text_color"><strong>0.94</strong></td>
+                <td class="text_color"><strong>610</strong></td>
+              </tr>
+              <tr>
+                <td class="text_color"><strong>Samples avg</strong></td>
+                <td class="text_color"><strong>0.95</strong></td>
+                <td class="text_color"><strong>0.97</strong></td>
+                <td class="text_color"><strong>0.95</strong></td>
+                <td class="text_color"><strong>610</strong></td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="accuracy">Overall Accuracy: 86.547%</p>
+        </div>
       </div>
     </div>
 

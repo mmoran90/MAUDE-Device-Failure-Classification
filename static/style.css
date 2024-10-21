@@ -16,6 +16,7 @@ h1{
 
 p {
     color: blue;
+    font-weight: bold;
 }
 
 th, td {
@@ -152,15 +153,23 @@ th, td {
     transition-duration: 1s;
   }
 
-  .tablink:hover{
+  .tablink:hover {
     background-color: #a9a9a9;
+  }
+
+  .model_title {
+    margin-top: 5%;
+    margin-left: 28%;
   }
 
   .model_perf {
     margin-left: 32%;
-    margin-top: 5%;
   }
 
-  .text_color{
+  .text_color {
     color: blue;
+  }
+
+  .accuracy{
+    margin-left: 15px;
   }
