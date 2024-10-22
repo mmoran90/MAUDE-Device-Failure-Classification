@@ -13,7 +13,7 @@ After the repo has been cloned, perform the following steps
    - Ensure python3 is installed on your machine (python --version)
      - If python3 is not installed, please do so now  
    - Execute `python app.exe` from command prompt/terminal
-     - `app.exe` utiliztes localhost (127.0.0.1 in IPv4)
+     - `app.exe` utiliztes localhost (127.0.0.1)
    - Open a browser and navigate to localhost or `ctrl + click` the link in the command prompt or terminal window
 
 </br>
